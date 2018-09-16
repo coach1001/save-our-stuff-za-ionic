@@ -17,11 +17,11 @@ export class AppComponent {
   initializeApp() {
     firebase.initializeApp(firebaseConfig);
     SplashScreen.hide().catch(error => {
-      console.error(error);
+      console.warn(error);
     });
 
     StatusBar.hide().catch(error => {
-      console.error(error);
+      console.warn(error);
     });
   }
 }
