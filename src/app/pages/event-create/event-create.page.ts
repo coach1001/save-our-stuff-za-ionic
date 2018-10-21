@@ -14,24 +14,18 @@ export class EventCreatePage implements OnInit {
 
   createEvent(
     eventName: string,
-    eventDateObject: any,
+    eventDate: string,
     eventPrice: number,
     eventCost: number
   ): void {
-    if (eventDateObject === undefined) {
-      return;
-    } else if (
-      eventDateObject.year === undefined ||
-      eventDateObject.month === undefined ||
-      eventDateObject.day === undefined
+    if (
+      eventName === undefined ||
+      eventDate === undefined ||
+      eventPrice === undefined ||
+      eventCost === undefined
     ) {
       return;
     }
-    const eventDate: Date = new Date(
-      eventDateObject.year.value,
-      eventDateObject.month.value - 1,
-      eventDateObject.day.value
-    );
     this.eventService
       .createEvent(eventName, eventDate, eventPrice, eventCost)
       .then(() => {

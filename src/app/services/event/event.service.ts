@@ -21,13 +21,13 @@ export class EventService {
 
   createEvent(
     eventName: string,
-    eventDate: Date,
+    eventDate: string,
     eventPrice: number,
     eventCost: number
   ): Promise<firebase.firestore.DocumentReference> {
     return this.eventListRef.add({
       name: eventName,
-      date: eventDate.toDateString(),
+      date: eventDate,
       price: eventPrice * 1,
       cost: eventCost * 1,
       revenue: eventCost * -1,
