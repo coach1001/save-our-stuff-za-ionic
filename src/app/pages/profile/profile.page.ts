@@ -65,23 +65,11 @@ export class ProfilePage implements OnInit {
     await alert.present();
   }
 
-  updateDOB(birthDate: any): void {
-    console.log(birthDate);
+  updateDOB(birthDate: string): void {
     if (birthDate === undefined) {
       return;
-    } else if (
-      birthDate.year === undefined ||
-      birthDate.month === undefined ||
-      birthDate.day === undefined
-    ) {
-      return;
     }
-    const dateOfBirth: Date = new Date(
-      birthDate.year.value,
-      birthDate.month.value - 1,
-      birthDate.day.value
-    );
-    this.profileService.updateDOB(dateOfBirth);
+    this.profileService.updateDOB(birthDate);
   }
 
   async updateEmail(): Promise<void> {

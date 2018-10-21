@@ -27,7 +27,7 @@ export class ProfileService {
     return this.userProfile.update({ firstName, lastName });
   }
 
-  updateDOB(birthDate: Date): Promise<any> {
+  updateDOB(birthDate: string): Promise<any> {
     return this.userProfile.update({ birthDate });
   }
 
