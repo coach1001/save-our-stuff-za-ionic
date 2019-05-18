@@ -24,7 +24,7 @@ export class SlipService {
     return this.slipListRef;
   }
 
-  createSlip(
+  async createSlip(
     slip: SlipModel,
   ): Promise<firebase.firestore.DocumentReference> {
     return this.slipListRef.add(slip);

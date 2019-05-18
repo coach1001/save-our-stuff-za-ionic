@@ -19,12 +19,24 @@ export class SlipListPage implements OnInit {
         slipListSnapshot.forEach(snap => {
           this.slipList.push({
             id: snap.id,
-            name: snap.data().name,
-            price: snap.data().price,
-            date: snap.data().date,
+            ...snap.data()
           });
           return false;
         });
       });
   }
 }
+
+// export interface SlipModel {
+//   id?: string,
+//   itemDescription: string,
+//   purchaseDate: string,
+//   category: Array<string>,
+//   store: string,
+//   purchaseLocation: string,
+//   selectWarrantee: string,
+//   approximateValue: number,
+//   taxClaimable: boolean,
+//   pictures: Array<string>,
+//   notes: string
+// }

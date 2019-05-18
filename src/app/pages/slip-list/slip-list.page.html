@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
+      <ion-back-button defaultHref="/home"></ion-back-button>
     </ion-buttons>
     <ion-title>Your Slips</ion-title>
   </ion-toolbar>
@@ -13,11 +13,14 @@
       <ion-label>Your Slips</ion-label>
     </ion-list-header>
     <ion-item tappable *ngFor="let slip of slipList" routerLink="/slip-detail/{{ slip.id }}">
-      <ion-label>
-        <h2>{{slip?.name}}</h2>
-        <p>Ticket: <strong>${{slip?.price}}</strong></p>
-        <p>Date: <strong>{{slip?.date}}</strong></p>
-      </ion-label>
+      {{slip | json}}
+      <!-- <ion-label>
+        <h2>{{slip?.itemDescription}}</h2>
+        <p>Date: <strong>${{slip?.purchaseDate}}</strong></p>
+        <ng-container *ngFor="let cat of category">
+            <p><strong>{{cat}}</strong></p>
+        </ng-container>
+      </ion-label> -->
     </ion-item>
   </ion-list>
 </ion-content>

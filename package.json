@@ -24,12 +24,21 @@
     "@capacitor/cli": "1.0.0-beta.17",
     "@capacitor/core": "1.0.0-beta.17",
     "@capacitor/ios": "^1.0.0-beta.17",
+    "@ionic-native/chooser": "^5.6.0",
+    "@ionic-native/core": "^5.6.0",
+    "@ionic-native/file-picker": "^4.20.0",
     "@ionic/angular": "^4.0.0",
     "@ionic/pwa-elements": "^1.2.0",
+    "cordova-browser": "6.0.0",
+    "cordova-ios": "5.0.1",
+    "cordova-plugin-add-swift-support": "2.0.2",
+    "cordova-plugin-chooser": "1.2.5",
+    "cordova-plugin-filepicker": "1.1.6",
     "cordova-windows": "7.0.0",
     "core-js": "^2.5.4",
     "firebase": "^5.8.1",
     "rxjs": "~6.3.3",
+    "unorm": "^1.5.0",
     "zone.js": "~0.8.29"
   },
   "devDependencies": {
@@ -72,10 +81,14 @@
       "cordova-plugin-device": {},
       "cordova-plugin-splashscreen": {},
       "cordova-plugin-ionic-webview": {},
-      "cordova-plugin-ionic-keyboard": {}
+      "cordova-plugin-ionic-keyboard": {},
+      "cordova-plugin-filepicker": {},
+      "cordova-plugin-chooser": {}
     },
     "platforms": [
-      "windows"
+      "windows",
+      "ios",
+      "browser"
     ]
   }
 }

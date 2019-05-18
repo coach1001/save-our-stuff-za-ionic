@@ -1,4 +1,5 @@
 export interface SlipModel {
+    id?: string,
     itemDescription: string,
     purchaseDate: string,
     category: Array<string>,

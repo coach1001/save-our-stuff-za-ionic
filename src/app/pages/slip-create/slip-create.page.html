@@ -9,6 +9,10 @@
 
 <ion-content padding>
 
+    <ion-button expand="block" (click)="openFilepicker()">
+        Upload Files
+    </ion-button>
+
     <ion-item>
         <ion-label position="stacked">Item Description</ion-label>
         <ion-input [(ngModel)]="slip.itemDescription" type="text"></ion-input>
@@ -44,12 +48,7 @@
 
     <ion-item>
         <ion-label position="stacked">Select Warrantee | Guarantee Validity End Date</ion-label>
-        <ion-input [(ngModel)]="slip.selectWarrantee" type="text"></ion-input>
-    </ion-item>
-
-    <ion-item>
-        <ion-label position="stacked">Purchase Date</ion-label>
-        <ion-datetime [(ngModel)]="slip.purchaseDate" display-format="DD-MMM-YYYY"></ion-datetime>
+        <ion-datetime [(ngModel)]="slip.selectWarrantee" display-format="DD-MMM-YYYY"></ion-datetime>
     </ion-item>
 
     <ion-item>
@@ -59,8 +58,8 @@
     </ion-item>
 
     <ion-item>
-        <ion-label slot="end" position="stacked">Tax Claimable</ion-label>
-        <ion-checkbox slot="start" [(ngModel)]="slip.taxClaimable"></ion-checkbox>
+        <ion-label position="stacked">Tax Claimable</ion-label>
+        <ion-checkbox [(ngModel)]="slip.taxClaimable"></ion-checkbox>
     </ion-item>
 
     <ion-item>
