@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Not Verified</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-button expand="block" (click)="logOut()">
+    Return to login
+  </ion-button>
+  <ion-button expand="block" (click)="resendVerification()">
+    Resend verification
+  </ion-button>
+</ion-content>

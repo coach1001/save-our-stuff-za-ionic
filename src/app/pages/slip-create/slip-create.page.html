@@ -1,0 +1,75 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/home"></ion-back-button>
+        </ion-buttons>
+        <ion-title>New Slip</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+    <ion-item>
+        <ion-label position="stacked">Item Description</ion-label>
+        <ion-input [(ngModel)]="slip.itemDescription" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label position="stacked">Purchase Date</ion-label>
+        <ion-datetime [(ngModel)]="slip.purchaseDate" display-format="DD-MMM-YYYY"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+        <ion-label position="stacked">Category</ion-label>
+        <ion-select [(ngModel)]="slip.category" multiple="true">
+            <ion-select-option>Medical Expense</ion-select-option>
+            <ion-select-option>Small Appliance</ion-select-option>
+            <ion-select-option>Major Appliance</ion-select-option>
+            <ion-select-option>Consumer Electronics</ion-select-option>
+            <ion-select-option>Annual Licenses</ion-select-option>
+            <ion-select-option>Automative</ion-select-option>
+            <ion-select-option>Other</ion-select-option>
+        </ion-select>
+    </ion-item>
+
+    <ion-item>
+        <ion-label position="stacked">Store</ion-label>
+        <ion-input [(ngModel)]="slip.store" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label position="stacked">Purchase Location</ion-label>
+        <ion-input [(ngModel)]="slip.purchaseLocation" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label position="stacked">Select Warrantee | Guarantee Validity End Date</ion-label>
+        <ion-input [(ngModel)]="slip.selectWarrantee" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label position="stacked">Purchase Date</ion-label>
+        <ion-datetime [(ngModel)]="slip.purchaseDate" display-format="DD-MMM-YYYY"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+        <ion-label position="stacked">Approximate Value</ion-label>
+        <ion-input [(ngModel)]="slip.approximateValue" type="number">
+        </ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label slot="end" position="stacked">Tax Claimable</ion-label>
+        <ion-checkbox slot="start" [(ngModel)]="slip.taxClaimable"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+        <ion-label position="stacked">Notes</ion-label>
+        <ion-textarea [(ngModel)]="slip.notes"></ion-textarea>
+    </ion-item>
+
+    <ion-button expand="block" (click)="createSlip(slip)">
+        Create Slip
+    </ion-button>
+    
+</ion-content>

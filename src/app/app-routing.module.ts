@@ -10,18 +10,18 @@ const routes: Routes = [
     canActivate: [AuthGuard],
   },
   {
-    path: 'event-create',
-    loadChildren: './pages/event-create/event-create.module#EventCreatePageModule',
+    path: 'slip-create',
+    loadChildren: './pages/slip-create/slip-create.module#SlipCreatePageModule',
     canActivate: [AuthGuard],
   },
   {
-    path: 'event-detail/:id',
-    loadChildren: './pages/event-detail/event-detail.module#EventDetailPageModule',
+    path: 'slip-detail/:id',
+    loadChildren: './pages/slip-detail/slip-detail.module#SlipDetailPageModule',
     canActivate: [AuthGuard],
   },
   {
-    path: 'event-list',
-    loadChildren: './pages/event-list/event-list.module#EventListPageModule',
+    path: 'slip-list',
+    loadChildren: './pages/slip-list/slip-list.module#SlipListPageModule',
     canActivate: [AuthGuard],
   },
   { path: 'login', loadChildren: './pages/login/login.module#LoginPageModule' },
@@ -35,6 +35,8 @@ const routes: Routes = [
     loadChildren: './pages/reset-password/reset-password.module#ResetPasswordPageModule',
   },
   { path: 'signup', loadChildren: './pages/signup/signup.module#SignupPageModule' },
+  { path: 'not-verified', loadChildren: './not-verified/not-verified.module#NotVerifiedPageModule' },
+
 ];
 
 @NgModule({

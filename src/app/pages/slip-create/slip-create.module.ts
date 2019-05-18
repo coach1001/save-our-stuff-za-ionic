@@ -5,12 +5,12 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { EventCreatePage } from './event-create.page';
+import { SlipCreatePage } from './slip-create.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: EventCreatePage
+    component: SlipCreatePage
   }
 ];
 
@@ -21,6 +21,6 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [EventCreatePage]
+  declarations: [SlipCreatePage]
 })
-export class EventCreatePageModule {}
+export class SlipCreatePageModule {}
