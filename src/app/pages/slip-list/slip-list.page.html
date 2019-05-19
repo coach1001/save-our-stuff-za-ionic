@@ -7,20 +7,33 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
   <ion-list>
     <ion-list-header>
-      <ion-label>Your Slips</ion-label>
+      <ion-label>
+            <h2>Your Slips</h2>
+      </ion-label>
     </ion-list-header>
-    <ion-item tappable *ngFor="let slip of slipList" routerLink="/slip-detail/{{ slip.id }}">
-      {{slip | json}}
-      <!-- <ion-label>
+    <ion-item tappable *ngFor="let slip of slipList" (click)="setCurrentSlip(slip.id)">
+      <ion-label>
         <h2>{{slip?.itemDescription}}</h2>
-        <p>Date: <strong>${{slip?.purchaseDate}}</strong></p>
-        <ng-container *ngFor="let cat of category">
-            <p><strong>{{cat}}</strong></p>
-        </ng-container>
-      </ion-label> -->
+        <p>Purchased on: <strong>{{slip?.purchaseDate | date: 'dd-LLL-yyyy'}}</strong></p>
+        <ion-row>
+            <ng-container *ngFor="let cat of slip.category">
+                <ion-chip color="primary" outline="true">
+                    <ion-label>{{cat}}</ion-label>
+                </ion-chip>
+            </ng-container>
+        </ion-row>
+      </ion-label>
+      <!-- <ion-card tappable *ngFor="let slip of slipList" (click)="setCurrentSlip(slip.id)">
+        <ion-card-content>
+          <ion-card-subtitle>{{slip.itemDescription}}</ion-card-subtitle>
+          <ion-chip color="primary" outline="true" *ngFor="let cat of slip.category">
+            <ion-label>{{cat}}</ion-label>
+          </ion-chip>
+        </ion-card-content>
+      </ion-card> -->
     </ion-item>
   </ion-list>
 </ion-content>

@@ -1,0 +1,74 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-back-button defaultHref="/slip-list"></ion-back-button>
+      </ion-buttons>
+      <ion-title>Edit Slip</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding *ngIf="currentSlip">
+
+  <ion-button expand="block" (click)="openFilepicker()">
+      Upload Files
+  </ion-button>
+
+  <ion-item>
+      <ion-label position="stacked">Item Description</ion-label>
+      <ion-input [(ngModel)]="currentSlip.itemDescription" type="text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+      <ion-label position="stacked">Purchase Date</ion-label>
+      <ion-datetime [(ngModel)]="currentSlip.purchaseDate" display-format="DD-MMM-YYYY"></ion-datetime>
+  </ion-item>
+
+  <ion-item>
+      <ion-label position="stacked">Category</ion-label>
+      <ion-select [(ngModel)]="currentSlip.category" multiple="true">
+          <ion-select-option>Medical Expense</ion-select-option>
+          <ion-select-option>Small Appliance</ion-select-option>
+          <ion-select-option>Major Appliance</ion-select-option>
+          <ion-select-option>Consumer Electronics</ion-select-option>
+          <ion-select-option>Annual Licenses</ion-select-option>
+          <ion-select-option>Automative</ion-select-option>
+          <ion-select-option>Other</ion-select-option>
+      </ion-select>
+  </ion-item>
+
+  <ion-item>
+      <ion-label position="stacked">Store</ion-label>
+      <ion-input [(ngModel)]="currentSlip.store" type="text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+      <ion-label position="stacked">Purchase Location</ion-label>
+      <ion-input [(ngModel)]="currentSlip.purchaseLocation" type="text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+      <ion-label position="stacked">Select Warrantee | Guarantee Validity End Date</ion-label>
+      <ion-datetime [(ngModel)]="currentSlip.selectWarrantee" display-format="DD-MMM-YYYY"></ion-datetime>
+  </ion-item>
+
+  <ion-item>
+      <ion-label position="stacked">Approximate Value</ion-label>
+      <ion-input [(ngModel)]="currentSlip.approximateValue" type="number">
+      </ion-input>
+  </ion-item>
+
+  <ion-item>
+      <ion-checkbox [(ngModel)]="currentSlip.taxClaimable"></ion-checkbox>
+      <ion-label>Tax Claimable</ion-label>
+  </ion-item>
+
+  <ion-item>
+      <ion-label position="stacked">Notes</ion-label>
+      <ion-textarea [(ngModel)]="currentSlip.notes"></ion-textarea>
+  </ion-item>
+
+  <ion-button expand="block" (click)="updateSlip()">
+      Update slip
+  </ion-button>
+  
+</ion-content>

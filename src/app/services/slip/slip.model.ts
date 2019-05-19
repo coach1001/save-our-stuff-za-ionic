@@ -8,6 +8,23 @@ export interface SlipModel {
     selectWarrantee: string,
     approximateValue: number,
     taxClaimable: boolean,
-    pictures: Array<string>,
+    pictures: Array<picture>,
     notes: string
+}
+
+interface picture {
+    url?: string,
+    fileLocation?: FileLocation,
+    fileOperation?: FileOperation
+}
+
+enum FileLocation {
+    TEMP_CAMERA,
+    FILE_SYSTEM,
+    CLOUD
+}
+
+enum FileOperation {
+    DELETE,
+    CREATE
 }

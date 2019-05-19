@@ -4,12 +4,15 @@ import 'firebase/auth';
 import 'firebase/firestore';
 import 'firebase/storage';
 import { SlipModel } from './slip.model';
+import { cloneDeep } from 'lodash';
 
 @Injectable({
   providedIn: 'root',
 })
 export class SlipService {
   public slipListRef: firebase.firestore.CollectionReference;
+  public currentSlip: SlipModel = null;
+
   constructor() {
     firebase.auth().onAuthStateChanged(user => {
       if (user) {
@@ -24,10 +27,36 @@ export class SlipService {
     return this.slipListRef;
   }
 
-  async createSlip(
+  createSlip(
     slip: SlipModel,
   ): Promise<firebase.firestore.DocumentReference> {
     return this.slipListRef.add(slip);
+  }
+
+  updateSlip(
+    slip: SlipModel
+  ): Promise<void> {
+    let updateSlip: SlipModel = cloneDeep(slip);
+    delete(updateSlip.id);
+    return this.slipListRef.doc(slip.id).update(slip);
+  }
+
+  deleteSlip(
+    slipId: string
+  ): Promise<void> {
+    return this.slipListRef.doc(slipId).delete();
+  }
+
+  setCurrentSlip(slip: SlipModel) {
+    this.currentSlip = slip;
+  }
+
+  getCurrentSlip(): SlipModel {
+    return this.currentSlip;
+  }
+  
+  clearCurrentSlip(): void {
+    this.currentSlip = null;
   }
 
   getSlipDetail(slipId: string): firebase.firestore.DocumentReference {

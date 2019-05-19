@@ -15,8 +15,8 @@ const routes: Routes = [
     canActivate: [AuthGuard],
   },
   {
-    path: 'slip-detail/:id',
-    loadChildren: './pages/slip-detail/slip-detail.module#SlipDetailPageModule',
+    path: 'slip-edit/:id',
+    loadChildren: './pages/slip-edit/slip-edit.module#SlipEditPageModule',
     canActivate: [AuthGuard],
   },
   {

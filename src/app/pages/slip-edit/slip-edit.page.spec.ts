@@ -1,22 +1,22 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SlipDetailPage } from './slip-detail.page';
+import { SlipEditPage } from './slip-edit.page';
 
-describe('EventDetailPage', () => {
-  let component: SlipDetailPage;
-  let fixture: ComponentFixture<SlipDetailPage>;
+describe('SlipEditPage', () => {
+  let component: SlipEditPage;
+  let fixture: ComponentFixture<SlipEditPage>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SlipDetailPage ],
+      declarations: [ SlipEditPage ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SlipDetailPage);
+    fixture = TestBed.createComponent(SlipEditPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
